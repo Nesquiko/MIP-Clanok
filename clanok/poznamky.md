@@ -42,7 +42,7 @@ Tabluka na strane 6 Fig.1 je zhrnutie
 
 #### chyby prace: maly data set (20 developerov), developeri co uz pracovali s NST, neznamy kod pre developerov pocas interaktivnej casti interview
 
-#[Why Do Software Developers Use Static Analysis Tools? A User-Centered Study of Developer Needs and Motivations](https://ieeexplore.ieee.org/abstract/document/9124719)
+# [Why Do Software Developers Use Static Analysis Tools? A User-Centered Study of Developer Needs and Motivations](https://ieeexplore.ieee.org/abstract/document/9124719)
 Studia s 87 developermi firmy Software AG.
 ## 4 vyskumne otazky:
 ### 1. Ako su NST integrovane do vyvojoveho prostredia?
