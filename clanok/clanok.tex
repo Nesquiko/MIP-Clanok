@@ -1,9 +1,6 @@
-% Metódy inžinierskej práce
-
-\documentclass[10pt,twoside,slovak,a4paper]{article}
+\documentclass[11pt,twoside,slovak,a4paper]{article}
 
 \usepackage[slovak]{babel}
-%\usepackage[T1]{fontenc}
 \usepackage[IL2]{fontenc} % lepšia sadzba písmena Ľ než v T1
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
@@ -11,21 +8,22 @@
 \usepackage{hyperref} % odkazy v texte budú aktívne (pri niektorých triedach dokumentov spôsobuje posun textu)
 
 \usepackage{cite}
-%\usepackage{times}
+
+\oddsidemargin=0cm % text na neparnych stranach bude vycentrovany lebo margin = 0
+\evensidemargin=0cm
+\textwidth=16.5cm % sirka textu na strane
 
 \pagestyle{headings}
 
-\title{Názov\thanks{Semestrálny projekt v predmete Metódy inžinierskej práce, ak. rok 2015/16, vedenie: Meno Priezvisko}} % meno a priezvisko vyučujúceho na cvičeniach
+\title{Využitie statickej analýzy kódu pri vývoji softwaru}
 
-\author{Meno Priezvisko\\[2pt]
+\author{Lukáš Častven\\[2pt]
 	{\small Slovenská technická univerzita v Bratislave}\\
 	{\small Fakulta informatiky a informačných technológií}\\
-	{\small \texttt{...@stuba.sk}}
+	{\small \texttt{xcastven@stuba.sk}}
 	}
 
-\date{\small 30. september 2015} % upravte
-
-
+\date{\small  5. november 2021}
 
 \begin{document}
 
@@ -41,37 +39,52 @@
 	na opravu a zlepšenie kódu a ako ich implementujú do ich pracovného prostredia.~\cite{Main}
 \end{abstract}
 
-
 \pagebreak
 
+\section{Úvod}
+
+\section{Princípy statickej analýzy}
+\subsection{Čo je statická analýza}
+\subsection{Ako funguje}
+
+\section{Využitie pri vývoji softvéru}
+\subsection{Benefity}
+\subsection{Nedostatky}
+
+\section{Implementácia nástrojov statickej analýzy}
+\subsection{Formy}
+\subsection{Z pohľadu developera}
+
+\section{Najdôležitejšie funkcionality nástrojov statickej analýzy}
+
+\section{Záver}
 
 
 
 
-
-\begin{table}
-	\begin{center}
-		\begin{tabular}{c|c|r}
-			$ID$ & $Krajina$      & $Obyvatelia(mil)$ \\
-			\hline
-			1    & India          & 340               \\
-			2    & USA            & 200               \\
-			3    & Indonesia      & 140               \\
-			4    & Brazilia       & 130               \\
-			5    & Mexiko         & 98                \\
-			6    & Filipiny       & 88                \\
-			7    & Vietnam        & 54                \\
-			8    & Egypt          & 47                \\
-			9    & Banglades      & 46                \\
-			10   & Pakistan       & 45                \\
-			11   & Kolumbia       & 38                \\
-			12   & Velka Britania & 38                \\
-			13   & Turecko        & 37                \\
-		\end{tabular}
-		\caption{Tabulka}
-		\label{tab:Tabulka 1}
-	\end{center}
-\end{table}
+%\begin{table}
+%	\begin{center}
+%		\begin{tabular}{c|c|r}
+%			$ID$ & $Krajina$      & $Obyvatelia(mil)$ \\
+%			\hline
+%			1    & India          & 340               \\
+%			2    & USA            & 200               \\
+%			3    & Indonesia      & 140               \\
+%			4    & Brazilia       & 130               \\
+%			5    & Mexiko         & 98                \\
+%			6    & Filipiny       & 88                \\
+%			7    & Vietnam        & 54                \\
+%			8    & Egypt          & 47                \\
+%			9    & Banglades      & 46                \\
+%			10   & Pakistan       & 45                \\
+%			11   & Kolumbia       & 38                \\
+%			12   & Velka Britania & 38                \\
+%			13   & Turecko        & 37                \\
+%		\end{tabular}
+%		\caption{Tabulka}
+%		\label{tab:Tabulka 1}
+%	\end{center}
+%\end{table}
 
 
 %{\centering\includegraphics[scale=0.4]{pozitiva_negativa.pdf}}
