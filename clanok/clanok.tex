@@ -54,13 +54,36 @@ zistíme ich benefity (č.\ref{vyuzitie:benefity}) a aj nedostatky (č.\ref{vyuz
 je podrobnejšie vysvetlená v časti \ref{implementacia}, aké formy sa využívajú (č.\ref{implementacia:formy}) a ako vlastne vyzerá
 práca za použitia statickej analýzy z pohľadu developera (č.\ref{implementacia:dev}).
 
-
+\pagebreak
 
 \section{Princípy statickej analýzy} \label{principy}
 \subsection{Čo je statická analýza} \label{principy:co}
-\subsection{Ako funguje} \label{principy:ako}
+Statická analýza je proces, pri ktorom je kód posudzovaný bez spustenia samotného programu a bez vstupu. Preto sa nazýva statická.
+Analyzuje sa zdrojový kód a v niektorých prípadoch aj objektový kód\footnote{Väčšinou ide o súbori s rozšírením nazvu „.o".}.
+Po úspešnom ohodnotení kódu, sú developerovi zobrazené nájdené chyby a defekty. Taktiež sú poskytnuté vysvetlenia, prečo sú najdené
+chyby realnymi chybami a ako ich je možné opraviť.
+\cite{wiki:Static_program_analysis}
+
+\subsection{Čo statická analýza robí} \label{principy:ako}
+Existuje veľa typov nástrojov statickej analýzy, ale nie všetky poskytujú rovnake funkcionality ako iné. Našťastie hlavný
+postup je jasne definovaný. Skladá sa len z dvoch krokov:
+
+\begin{enumerate}
+	\item Analýza zdrojového (objektového) kódu. \label{krok1}
+	\item Informovanie o chybách, defektoch a narušení osvedčených postupov. \label{krok2}
+\end{enumerate}
+
+Aby sme lepšie pochopili čo statická analýza robi, pozrieme sa na konkrétny nástroj FindBugs \cite{FindBugs}. Tento nástroj sa používa na
+odhalenie chýb v programovacom jazyku Java.
+
+Po kroku číslo (\ref{krok1}), zanalyzovanie kódu, FindBugs rozdelí defekty do kategórií podľa ich závažnosti. Tie sú: vysoká, stredná, nízka.
+Nasledovne, ako súčasť kroku (\ref{krok2}), poskytne developerovi aj niekoľko možných rýchlo návrhov opravy\footnote{ang. Quick fixes}.\cite{BrittanyJohnson}
+
+
 
 \section{Využitie pri vývoji softvéru} \label{vyuzitie}
+V praxi nie je využitie statickej analýzy bez problémové. Samozrejme, benefity tejto metódy sú jasne viditľne, avšak developerov viac odrádzajú
+tažkosti a nedostatky ako pozitívá, ktoré táto metóda poskytuje~\cite{BrittanyJohnson}.
 \subsection{Benefity} \label{vyuzitie:benefity}
 \subsection{Nedostatky} \label{vyuzitie:nedostatky}
 
@@ -103,6 +126,6 @@ práca za použitia statickej analýzy z pohľadu developera (č.\ref{implementa
 
 \pagebreak
 \bibliography{literatura}
-\bibliographystyle{plain}
+\bibliographystyle{ieeetr}
 
 \end{document}

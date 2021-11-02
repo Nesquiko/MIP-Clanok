@@ -21,6 +21,7 @@
 2. praca s nimi z pohladu developera
 
 - kedy
+- sucast devops
 - filtracia a riesenie hlaseni
 - nedostatky (narusenie pracovneho prievehu, falsone pozitiva)
 
