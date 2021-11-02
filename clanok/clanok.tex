@@ -36,26 +36,39 @@
 	zlepšiť kvalitu kódu a udržať konzistentný štýl, ktorý taktiež spĺňa osvedčené postupy pri vývoji softvéru.
 	Veľkou výhodou je tiež urýchlenie hľadania chýb a softvérových defektov v porovnaní s manuálnou kontrolou.
 	V tomto článku pochopíme, prečo developeri používajú nástroje statickej analýzy, ako ich používajú
-	na opravu a zlepšenie kódu a ako ich implementujú do ich pracovného prostredia.~\cite{Main}
+	na opravu a zlepšenie kódu a ako ich implementujú do ich pracovného prostredia.
 \end{abstract}
 
-\pagebreak
+\pagestyle{plain}
 
 \section{Úvod}
+S rastom komplexity vyvýjaného softvéru, rastie aj jeho minimálna požadovaná kvalita. Chyby a defekty softvéru
+dokážu firmám spôsobiť nemalé finančné straty. Preto existujú viaceré metódy ako kvalitu softvérových riešení zlepšiť
+a udržať počas vývoja, napríklad podrobné testovanie alebo revízie nového kódu iným developerom. V tomto článku si
+bližšie priblížime metódu statickej analýzy, ktorá je používaná na odhalenie chýb a defektov a na udržovanie kvality kódu na požadovanej
+úrovni.~\cite{BrittanyJohnson,LisaNguyen}
 
-\section{Princípy statickej analýzy}
-\subsection{Čo je statická analýza}
-\subsection{Ako funguje}
+O statickej analýze samotnej sa dozvieme v časti \ref{principy}, presnejšie, pochopíme čo to je (č.\ref{principy:co}) a
+ako funguje (č.\ref{principy:ako}). Ako sa nástroje statickej analýzy používajú v praxi je uvedené v časti \ref{vyuzitie}, kde
+zistíme ich benefity (č.\ref{vyuzitie:benefity}) a aj nedostatky (č.\ref{vyuzitie:nedostatky}). Implementácia v pracovnom prostredí
+je podrobnejšie vysvetlená v časti \ref{implementacia}, aké formy sa využívajú (č.\ref{implementacia:formy}) a ako vlastne vyzerá
+práca za použitia statickej analýzy z pohľadu developera (č.\ref{implementacia:dev}).
 
-\section{Využitie pri vývoji softvéru}
-\subsection{Benefity}
-\subsection{Nedostatky}
 
-\section{Implementácia nástrojov statickej analýzy}
-\subsection{Formy}
-\subsection{Z pohľadu developera}
 
-\section{Najdôležitejšie funkcionality nástrojov statickej analýzy}
+\section{Princípy statickej analýzy} \label{principy}
+\subsection{Čo je statická analýza} \label{principy:co}
+\subsection{Ako funguje} \label{principy:ako}
+
+\section{Využitie pri vývoji softvéru} \label{vyuzitie}
+\subsection{Benefity} \label{vyuzitie:benefity}
+\subsection{Nedostatky} \label{vyuzitie:nedostatky}
+
+\section{Implementácia nástrojov statickej analýzy} \label{implementacia}
+\subsection{Formy}\label{implementacia:formy}
+\subsection{Z pohľadu developera}\label{implementacia:dev}
+
+\section{Najdôležitejšie funkcionality nástrojov statickej analýzy} \label{funkcionality}
 
 \section{Záver}
 
@@ -86,11 +99,10 @@
 %	\end{center}
 %\end{table}
 
-
 %{\centering\includegraphics[scale=0.4]{pozitiva_negativa.pdf}}
 
-
-% týmto sa generuje zoznam literatúry z obsahu súboru literatura.bib podľa toho, na čo sa v článku odkazujete
+\pagebreak
 \bibliography{literatura}
-\bibliographystyle{plain} % prípadne alpha, abbrv alebo hociktorý iný
+\bibliographystyle{plain}
+
 \end{document}

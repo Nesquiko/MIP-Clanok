@@ -1,4 +1,6 @@
-# [Why Don't Software Developers Use Static Analysis Tools to Find Bugs?](https://ieeexplore.ieee.org/abstract/document/6606613)
+# Poznamky
+
+## [Why Don't Software Developers Use Static Analysis Tools to Find Bugs?](https://ieeexplore.ieee.org/abstract/document/6606613)
 
 ## 3 vyskumne otazky
 
@@ -48,7 +50,7 @@ Tabluka na strane 6 Fig.1 je zhrnutie
 
 #### chyby prace: maly data set (20 developerov), developeri co uz pracovali s NST, neznamy kod pre developerov pocas interaktivnej casti interview
 
-# [Why Do Software Developers Use Static Analysis Tools? A User-Centered Study of Developer Needs and Motivations](https://ieeexplore.ieee.org/abstract/document/9124719)
+## [Why Do Software Developers Use Static Analysis Tools? A User-Centered Study of Developer Needs and Motivations](https://ieeexplore.ieee.org/abstract/document/9124719)
 
 Studia s 87 developermi firmy Software AG.
 
@@ -94,11 +96,11 @@ Studia s 87 developermi firmy Software AG.
 
 #### chyby prace: data set iba z jednej firmy, zle porozumenie otazkam
 
-# [A few billion lines of code later: using static analysis to find bugs in the real world](https://dl.acm.org/doi/10.1145/1646353.1646374)
+## [A few billion lines of code later: using static analysis to find bugs in the real world](https://dl.acm.org/doi/10.1145/1646353.1646374)
 
 Porovnanie potrieb ST v akademickom prostredi a v komercnom.
 
-# [Using Static Analysis to Find Bugs](https://ieeexplore.ieee.org/document/4602670?denied=)
+## [Using Static Analysis to Find Bugs](https://ieeexplore.ieee.org/document/4602670?denied=)
 
 Skratky:
 
