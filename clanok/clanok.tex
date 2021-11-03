@@ -45,45 +45,53 @@
 S rastom komplexity vyvýjaného softvéru, rastie aj jeho minimálna požadovaná kvalita. Chyby a defekty softvéru
 dokážu firmám spôsobiť nemalé finančné straty. Preto existujú viaceré metódy ako kvalitu softvérových riešení zlepšiť
 a udržať počas vývoja, napríklad podrobné testovanie alebo revízie nového kódu iným developerom. V tomto článku si
-bližšie priblížime metódu statickej analýzy, ktorá je používaná na odhalenie chýb a defektov a na udržovanie kvality kódu na požadovanej
-úrovni.~\cite{BrittanyJohnson,LisaNguyen}
+bližšie priblížime metódu statickej analýzy, ktorá je používaná na odhalenie chýb a defektov a na udržovanie kvality
+kódu na požadovanej úrovni.~\cite{BrittanyJohnson,LisaNguyen}
 
 O statickej analýze samotnej sa dozvieme v časti \ref{principy}, presnejšie, pochopíme čo to je (č.\ref{principy:co}) a
-ako funguje (č.\ref{principy:ako}). Ako sa nástroje statickej analýzy používajú v praxi je uvedené v časti \ref{vyuzitie}, kde
-zistíme ich benefity (č.\ref{vyuzitie:benefity}) a aj nedostatky (č.\ref{vyuzitie:nedostatky}). Implementácia v pracovnom prostredí
-je podrobnejšie vysvetlená v časti \ref{implementacia}, aké formy sa využívajú (č.\ref{implementacia:formy}) a ako vlastne vyzerá
-práca za použitia statickej analýzy z pohľadu developera (č.\ref{implementacia:dev}).
+ako funguje (č.\ref{principy:ako}). Ako sa nástroje statickej analýzy používajú v praxi je uvedené v časti
+\ref{vyuzitie}, kde zistíme ich benefity (č.\ref{vyuzitie:benefity}) a aj nedostatky (č.\ref{vyuzitie:nedostatky}).
+Implementácia v pracovnom prostredí je podrobnejšie vysvetlená v časti \ref{implementacia}, aké formy sa využívajú
+(č.\ref{implementacia:formy}) a ako vlastne vyzerá práca za použitia statickej analýzy z pohľadu developera
+(č.\ref{implementacia:dev}).
 
 \pagebreak
 
 \section{Princípy statickej analýzy} \label{principy}
 \subsection{Čo je statická analýza} \label{principy:co}
-Statická analýza je proces, pri ktorom je kód posudzovaný bez spustenia samotného programu a bez vstupu. Preto sa nazýva statická.
-Analyzuje sa zdrojový kód a v niektorých prípadoch aj objektový kód\footnote{Väčšinou ide o súbori s rozšírením nazvu „.o".}.
-Po úspešnom ohodnotení kódu, sú developerovi zobrazené nájdené chyby a defekty. Taktiež sú poskytnuté vysvetlenia, prečo sú najdené
-chyby realnymi chybami a ako ich je možné opraviť.
+Statická analýza je proces, pri ktorom je kód posudzovaný bez spustenia samotného programu a bez vstupu. Preto sa
+nazýva statická. Analyzuje sa zdrojový kód a v niektorých prípadoch aj objektový kód\footnote{Väčšinou ide o súbori s
+	rozšírením nazvu „.o".}. Po úspešnom ohodnotení kódu, sú developerovi zobrazené nájdené chyby a defekty. Taktiež sú
+poskytnuté vysvetlenia, prečo sú najdené chyby realnymi chybami a ako ich je možné opraviť.
 \cite{wiki:Static_program_analysis}
 
 \subsection{Čo statická analýza robí} \label{principy:ako}
-Existuje veľa typov nástrojov statickej analýzy, ale nie všetky poskytujú rovnake funkcionality ako iné. Našťastie hlavný
-postup je jasne definovaný. Skladá sa len z dvoch krokov:
+Existuje veľa typov nástrojov statickej analýzy, ale nie všetky poskytujú rovnake funkcionality ako iné. Našťastie
+hlavný postup je jasne definovaný. Skladá sa len z dvoch krokov:
 
 \begin{enumerate}
 	\item Analýza zdrojového (objektového) kódu. \label{krok1}
 	\item Informovanie o chybách, defektoch a narušení osvedčených postupov. \label{krok2}
 \end{enumerate}
 
-Aby sme lepšie pochopili čo statická analýza robi, pozrieme sa na konkrétny nástroj FindBugs \cite{FindBugs}. Tento nástroj sa používa na
-odhalenie chýb v programovacom jazyku Java.
+Aby sme lepšie pochopili čo statická analýza robi, pozrieme sa na konkrétny nástroj FindBugs. Tento
+nástroj sa používa na odhalenie chýb v programovacom jazyku Java.\cite{FindBugs}
 
-Po kroku číslo (\ref{krok1}), zanalyzovanie kódu, FindBugs rozdelí defekty do kategórií podľa ich závažnosti. Tie sú: vysoká, stredná, nízka.
-Nasledovne, ako súčasť kroku (\ref{krok2}), poskytne developerovi aj niekoľko možných rýchlo návrhov opravy\footnote{ang. Quick fixes}.\cite{BrittanyJohnson}
-
+Krok (\ref{krok1}) je za pomoci FindBugs realizovateľný buď cez plugin v integrovaných vývojarských prostrediach, alebo
+cez príkazový riadok. Po zanalyzovanie kódu, FindBugs rozdelí defekty do kategórií podľa ich závažnosti. Tie sú:
+vysoká, stredná, nízka. Nasledovne, ako súčasť kroku (\ref{krok2}), poskytne developerovi aj niekoľko možných návrhov
+rýchlych oprav\footnote{ang. Quick fixes}.\cite{BrittanyJohnson,NathanAyewah}
 
 
 \section{Využitie pri vývoji softvéru} \label{vyuzitie}
-V praxi nie je využitie statickej analýzy bez problémové. Samozrejme, benefity tejto metódy sú jasne viditľne, avšak developerov viac odrádzajú
-tažkosti a nedostatky ako pozitívá, ktoré táto metóda poskytuje~\cite{BrittanyJohnson}.
+V praxi nie je využitie statickej analýzy bez problémové. Samozrejme, benefity tejto metódy sú jasne viditľne, avšak
+developerov viac odrádzajú tažkosti a nedostatky ako pozitívá, ktoré táto metóda poskytuje. V tejto časti si
+rozoberieme vedeckú prácu \textbf{Why don't software developers use static analysis tools to find bugs?}\cite{BrittanyJohnson}
+a zistíme prečo je predošlé tvrdenie pravdivé.
+
+V tomto príspevku autori uskutočnili rozhovory s dvadsiatimi vývojarmi na tému statická analýza. Zozbirané odpovede
+zkategorizovali do niekoľkých okruhov a rozdelili na pozitívne a negatívne.
+
 \subsection{Benefity} \label{vyuzitie:benefity}
 \subsection{Nedostatky} \label{vyuzitie:nedostatky}
 
@@ -94,6 +102,7 @@ tažkosti a nedostatky ako pozitívá, ktoré táto metóda poskytuje~\cite{Brit
 \section{Najdôležitejšie funkcionality nástrojov statickej analýzy} \label{funkcionality}
 
 \section{Záver}
+
 
 
 
