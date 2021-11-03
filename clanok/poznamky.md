@@ -13,7 +13,7 @@
 - NST su uz predpripravene vo vyvojovom prostredi, 3 z 20
 - udrzanie vyvojovych tymovych praktik, 7 z 20
   - zvysenie povedomia o moznych problemoch, chybach z nepozornosti, skor vo vyvojovom cycle
-  - komunukacia a presadzovanie standardov a stylov kodu
+- komunukacia a presadzovanie standardov a stylov kodu, 2 z 20
 - nastavitelnost pre hladanie chyb
 
 #### Nevyuzivanie
