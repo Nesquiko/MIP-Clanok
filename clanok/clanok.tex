@@ -15,7 +15,8 @@
 
 \pagestyle{headings}
 
-\title{Využitie statickej analýzy kódu pri vývoji softvéru}
+\title{Využitie statickej analýzy kódu pri vývoji softvéru
+\thanks{Semestrálny projekt v predmete Metódy inžinierskej práce, ak. rok 2021/22, vedenie: Ing. Zuzana Špitálová}}
 
 \author{Lukáš Častven\\[2pt]
 	{\small Slovenská technická univerzita v Bratislave}\\
@@ -161,8 +162,24 @@ respondentov by prijali návrhy počas opravovania nájdených chýb. \emph{„A
 	vedieť aj povedať ako ju opraviť."}, vyhlásil jeden z respondentov.
 
 \section{Implementácia nástrojov statickej analýzy} \label{implementacia}
-\subsection{Formy}\label{implementacia:formy}
+\subsection{Typy}\label{implementacia:formy}
+Existuje viacero typov nástrojov statickej analýzy. Nástroje implementované v integorovaných vývojových prostrediach (IDE),
+ktoré bežia v pozadí, poskytujú instantú spätnú väzbu počas práce, avšak tento typ nachádza len jednoduché chyby nie
+komputačne náročné na odhalenie.
+
+Niektorý developeri nepoužívajú IDE, vtedy prichádza do úvahy nástroj integrovaný do
+kompilátora daného programovacieho jazyka.
+
+A v neposlednom rade poznáme aj rigorózne analyzátory, ktoré sa väčšinou
+spúšťajú cez noc, lebo dlho a podrobne analyzujú daný kód.\cite{BrittanyJohnson, LisaNguyen}
+
 \subsection{Z pohľadu developera}\label{implementacia:dev}
+Samozrejme dôležitá je prax, to ako uživateľ používa a vníma daný nástroj.
+
+Najdôležitejšie je pre developera minimalizovanie pozastavenia pracovného priebehu. Väčšinou vývojar nezaraďuje
+čas na vykonanie analýzy do svojho pracovného priebehu, lebo len čaká na výsledok. Behom tohto času vývojar stráca
+sústredenie na daný problém.
+
 
 \section{Najdôležitejšie funkcionality nástrojov statickej analýzy} \label{funkcionality}
 
