@@ -6,13 +6,15 @@
 \usepackage{graphicx}
 \usepackage{url} % príkaz \url na formátovanie URL
 \usepackage{hyperref} % odkazy v texte budú aktívne (pri niektorých triedach dokumentov spôsobuje posun textu)
-
 \usepackage{cite}
+
+%\usepackage[bottom]{footmisc} % "prilepy" poznamky ku spodku strany
+%\raggedbottom % casti nebudu roztiahnute na celu vysku strany
+
 
 \oddsidemargin=0cm % text na neparnych stranach bude vycentrovany lebo margin = 0
 \evensidemargin=0cm
 \textwidth=16.5cm % sirka textu na strane
-
 \pagestyle{headings}
 
 \title{Využitie statickej analýzy kódu pri vývoji softvéru
@@ -52,9 +54,8 @@ kódu na požadovanej úrovni.\cite{BrittanyJohnson,LisaNguyen}
 O statickej analýze samotnej sa dozvieme v časti \ref{principy}, presnejšie, pochopíme čo to je (č.\ref{principy:co}) a
 ako funguje (č.\ref{principy:ako}). Ako sa nástroje statickej analýzy používajú v praxi je uvedené v časti
 \ref{vyuzitie}, kde zistíme ich benefity (č.\ref{vyuzitie:benefity}) a aj nedostatky (č.\ref{vyuzitie:nedostatky}).
-Implementácia v pracovnom prostredí je podrobnejšie vysvetlená v časti \ref{implementacia}, aké formy sa využívajú
-(č.\ref{implementacia:formy}) a ako vlastne vyzerá práca za použitia statickej analýzy z pohľadu developera
-(č.\ref{implementacia:dev}).
+Ako sú nástroje implementované v pracovnom prostredí je podrobnejšie vysvetlená v časti \ref{implementacia}. A ako s
+nimi pracujú developeri v priebehu práce zitíme v časti \ref{dev}.
 
 \pagebreak
 
@@ -162,7 +163,6 @@ respondentov by prijali návrhy počas opravovania nájdených chýb. \emph{„A
 	vedieť aj povedať ako ju opraviť."}, vyhlásil jeden z respondentov.
 
 \section{Implementácia nástrojov statickej analýzy} \label{implementacia}
-\subsection{Typy}\label{implementacia:formy}
 Existuje viacero typov nástrojov statickej analýzy. Nástroje implementované v integorovaných vývojových prostrediach (IDE),
 ktoré bežia v pozadí, poskytujú instantú spätnú väzbu počas práce, avšak tento typ nachádza len jednoduché chyby nie
 komputačne náročné na odhalenie.
@@ -173,15 +173,22 @@ kompilátora daného programovacieho jazyka.
 A v neposlednom rade poznáme aj rigorózne analyzátory, ktoré sa väčšinou
 spúšťajú cez noc, lebo dlho a podrobne analyzujú daný kód.\cite{BrittanyJohnson, LisaNguyen}
 
-\subsection{Z pohľadu developera}\label{implementacia:dev}
-Samozrejme dôležitá je prax, to ako uživateľ používa a vníma daný nástroj.
+\section{Z pohľadu developera}\label{dev}
+Samozrejme dôležitá je prax, to ako uživateľ používa a vníma daný nástroj\cite{LisaNguyen}.
 
-% TODO Using... statistiky ako, kedy, preco z poznamok
+\subsection*{Kedy sú používané}
+Developeri využívajú tieto nástroje behom voľna, v časoch medzi stretnutiami, alebo keď majú časové okno. Na oprave
+nájdených chýb strávia v priemere 10 až 30 minút a oprave jedneho nálezu zaberie zhruba menej ako 1 deň.
 
-Najdôležitejšie je pre developera minimalizovanie pozastavenia pracovného priebehu. Väčšinou vývojar nezaraďuje
-čas na vykonanie analýzy do svojho pracovného priebehu, lebo len čaká na výsledok. Behom tohto času vývojar stráca
-sústredenie na daný problém a pre toto klesá motivácia developera používať daný nástroj.
+\subsection*{Ciele pri používaní}
+Zvyčajne je vývojarovým cieľom opraviť všetky defekty alebo ich opraviť čo najviac v stanovenom časovom úseku. Preto
+je čas hlavný dôvod ukončenia opravy a toto priamo ovplyvňuje aké chyby si developer vyberie na opravu.
 
+\subsection*{Výber chýb na opravu}
+Developer si prevažne vyberie chybu, ktorú vie opraviť, má na to znalosti o celkovom projekte alebo má skúsenosť s
+daným nástrojom statickej analýzy. Pri varovaniach na nedostatky, ktoré ale nie sú chyby, však dominuje skúsenosť
+s nástrojom. Preto je dôležité aby dizajn daného nástroja podporoval správanie, ktoré vedie k oprave, aj keď vývojar
+nedokáže chybu opraviť.
 
 \section{Najdôležitejšie funkcionality nástrojov statickej analýzy} \label{funkcionality}
 
