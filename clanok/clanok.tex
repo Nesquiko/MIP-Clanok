@@ -54,8 +54,9 @@ kódu na požadovanej úrovni.\cite{BrittanyJohnson,LisaNguyen}
 O statickej analýze samotnej sa dozvieme v časti \ref{principy}, presnejšie, pochopíme čo to je (č.\ref{principy:co}) a
 ako funguje (č.\ref{principy:ako}). Ako sa nástroje statickej analýzy používajú v praxi je uvedené v časti
 \ref{vyuzitie}, kde zistíme ich benefity (č.\ref{vyuzitie:benefity}) a aj nedostatky (č.\ref{vyuzitie:nedostatky}).
-Ako sú nástroje implementované v pracovnom prostredí je podrobnejšie vysvetlená v časti \ref{implementacia}. A ako s
-nimi pracujú developeri v priebehu práce zitíme v časti \ref{dev}.
+Ako sú nástroje implementované v pracovnom prostredí je podrobnejšie vysvetlená v časti \ref{implementacia}. Ako s
+nimi pracujú developeri v priebehu práce zitíme v časti \ref{dev}. A v neposlednom rade zistíme aké nové funkcionality
+by chceli vývojari vidieť v budúconsti, časť \ref{navrhy}.
 
 \pagebreak
 
@@ -191,7 +192,17 @@ s nástrojom. Preto je dôležité aby dizajn daného nástroja podporoval sprá
 nedokáže chybu opraviť.
 
 \section{Návrhy na zlepšenie} \label{navrhy}
-% TODO pridaj do uvodu
+Najvyužívanejšie funkcionality sa týkajú opravy chýb. Návrhy rýchlych opráv by mali ukázať porovnanie terajšieho kódu a
+kódu po aplikovaní návrhu. Taktiež by sa developerom páčila možnosť aplikovania opravy rovno z nástroja. Táto aplikácia
+by mala mať viacero možnosťí, aplikovanie celého návrhu, iba časti, alebo vôbec.
+
+Samotné zobrazenie chýb má tiež zopár aspektov na vylepšenie. Malo by byť čo najrýchlejšie, aby nenarušovalo pracovný
+priebeh, čiže najlepšie vyhodnocované v pozadí s okamžitou spätnou väzbou. A malo by aj uľahčiť kolaboráciu a
+komunikáciu. Napríklad posielanie správ alebo zdielanie nálezou s inými.
+
+Nakoniec developeri by preferovali aj iné formy výstupu ako len list s chybami. Grafy, diagramy alebo teplotné mapy
+s modulmi kódu ako nódami.\cite{BrittanyJohnson,LisaNguyen}
+
 
 \section{Záver}
 Statická analýza pomáha developerom zlepšiť a udržať kvalitu kódu v projektoch. Dokáže násjť chyby urobené z
