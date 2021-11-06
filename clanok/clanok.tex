@@ -79,23 +79,23 @@ nástroj sa používa na odhalenie chýb v programovacom jazyku Java.\cite{FindB
 
 Krok (\ref{krok1}) je za pomoci FindBugs realizovateľný buď cez plugin v integrovaných vývojarských prostrediach, alebo
 cez príkazový riadok. Po zanalyzovanií kódu, FindBugs rozdelí defekty do kategórií podľa ich závažnosti. Tie sú:
-vysoká, stredná, nízka. Následovne, ako súčasť kroku (\ref{krok2}), poskytne vývojarovi aj niekoľko možných návrhov
+vysoká, stredná a nízka. Následovne, ako súčasť kroku (\ref{krok2}), poskytne vývojarovi aj niekoľko možných návrhov
 rýchlych opráv\footnote{ang. Quick fixes}.\cite{BrittanyJohnson,NathanAyewah}
 
 
 \section{Využitie pri vývoji softvéru} \label{vyuzitie}
-V praxi nie je využitie statickej analýzy bez problémové. Samozrejme, benefity tejto metódy sú jasne viditľne, avšak
+V praxi nie je využitie statickej analýzy bezproblémové. Samozrejme, benefity tejto metódy sú jasne viditeľne, avšak
 developerov viac odrádzajú tažkosti a nedostatky ako pozitívá, ktoré táto metóda poskytuje. V tejto časti si
 rozoberieme vedeckú prácu \textbf{Why don't software developers use static analysis tools to find bugs?}\cite{BrittanyJohnson}
 a zistíme prečo je predošlé tvrdenie pravdivé.
 
-V tomto príspevku autori uskutočnili rozhovory s dvadsiatimi vývojarmi na tému statická analýza. Zozbirané odpovede
+V tomto príspevku autori uskutočnili rozhovory s dvadsiatimi vývojarmi na tému statická analýza. Zozbierané odpovede
 zkategorizovali do niekoľkých okruhov a rozdelili na pozitívne a negatívne.
 
 \subsection{Prečo áno} \label{vyuzitie:benefity}
 \subsubsection*{Automatické hľadanie chýb}
 5 z 20 účastníkov tejto práce si myslí, že nástroje statickej analýzy sa oplatí používať práve z tohto dôvodu.
-Manuálna kontrola je zdĺhavá a namáhava, oproti automatickej statickej analýze.
+Manuálna kontrola je zdĺhavá a namáhavá, oproti automatickej statickej analýze.
 
 \emph{„Hoci čo, čo zautomatizuje nudnú prácu je skvele."}
 
@@ -146,7 +146,7 @@ Spolu označilo túto kategóriu 9 z 20 opýtaných ako závažný problém.
 Každý projekt je inakší, ma iné požiadavky, restrikcie a kvality. Preto je nastaviteľnosť dôležitý aspekt pre využívaný
 nástroj. Ale ako uviedlo 17 z 20 developerov, táto vlastnosť je silne netriviálna alebo nespĺňa vývojarove predstavy.
 
-Vývojar potrebuje niekoľko hodín, len na to aby sa naučil ako nastaviť daný nástroj. \emph{„Mnohe nástroje sú tak ťažko nastaviteľné, že vám v tom rovno zabránia."}
+Vývojar potrebuje niekoľko hodín len na to aby sa naučil ako nastaviť daný nástroj. \emph{„Mnohe nástroje sú tak ťažko nastaviteľné, že vám v tom rovno zabránia."}
 
 Problém, ktorý mala väčšina respondentov, je nemožnosť dočasne vypnúť upozornenia na špecifický typ defektov. Niektoré
 nástroje poskytuju vypnutie natrvalo, ale toto sa zas nepáči developerom, lebo nikto nevie vopred povedať, či daná,
@@ -166,7 +166,7 @@ Existuje viacero typov nástrojov statickej analýzy. Nástroje implementované 
 ktoré bežia v pozadí, poskytujú instantú spätnú väzbu počas práce, avšak tento typ nachádza len jednoduché chyby nie
 komputačne náročné na odhalenie.
 
-Niektorý developeri nepoužívajú IDE, vtedy prichádza do úvahy nástroj integrovaný do
+Niektorí developeri nepoužívajú IDE, vtedy prichádza do úvahy nástroj integrovaný do
 kompilátora daného programovacieho jazyka.
 
 A v neposlednom rade poznáme aj rigorózne analyzátory, ktoré sa väčšinou
@@ -176,8 +176,8 @@ spúšťajú cez noc, lebo dlho a podrobne analyzujú daný kód.\cite{BrittanyJ
 Samozrejme dôležitá je prax, to ako uživateľ používa a vníma daný nástroj\cite{LisaNguyen}.
 
 \subsection*{Kedy sú používané}
-Developeri využívajú tieto nástroje behom voľna, v časoch medzi stretnutiami, alebo keď majú časové okno. Na oprave
-nájdených chýb strávia v priemere 10 až 30 minút a oprava jedného nálezu zaberie zhruba menej ako 1 deň.
+Developeri využívajú tieto nástroje behom voľna (v časoch medzi stretnutiami, alebo keď majú časové okno). Opravovanie
+nájdených chýb je v priemere vykonávané v úsekoch od 10 do 30 minút a oprava jedného nálezu zaberie zhruba menej ako 1 deň.
 
 \subsection*{Ciele pri používaní}
 Zvyčajne je vývojarovým cieľom opraviť všetky defekty alebo ich opraviť čo najviac v stanovenom časovom úseku. Preto
@@ -210,7 +210,8 @@ Aj keď v teórií prináša statická analýza veľa pozitív, v praxi nie je p
 bezproblémová, to zapríčiňuje nedostatočné využívanie. Chyby v implementácií tejto metódy do pracovných prostredí
 vývojarov prevážia jej benefity.
 
-Preto by mali budúci inžinieri statickej analýzy viac počúvať spatnú väzbu k ich nástroju od uživateľov.
+Preto by mali inžinieri statickej analýzy viac počúvať spatnú väzbu k ich nástroju od uživateľov a rozvíjať
+funkcionality v tomto smere.
 
 \pagebreak
 \bibliography{literatura}
