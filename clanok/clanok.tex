@@ -1,4 +1,4 @@
-\documentclass[11pt,twoside,slovak,a4paper]{article}
+\documentclass[10pt,twoside,slovak,a4paper]{article}
 
 \usepackage[slovak]{babel}
 \usepackage[IL2]{fontenc} % lepšia sadzba písmena Ľ než v T1
@@ -8,8 +8,7 @@
 \usepackage{hyperref} % odkazy v texte budú aktívne (pri niektorých triedach dokumentov spôsobuje posun textu)
 \usepackage{cite}
 
-%\usepackage[bottom]{footmisc} % "prilepy" poznamky ku spodku strany
-%\raggedbottom % casti nebudu roztiahnute na celu vysku strany
+\raggedbottom % casti nebudu roztiahnute na celu vysku strany
 
 
 \oddsidemargin=0cm % text na neparnych stranach bude vycentrovany lebo margin = 0
@@ -58,7 +57,6 @@ Ako sú nástroje implementované v pracovnom prostredí je podrobnejšie vysvet
 nimi pracujú developeri v priebehu práce zitíme v časti \ref{dev}. A v neposlednom rade zistíme aké nové funkcionality
 by chceli vývojari vidieť v budúconsti, časť \ref{navrhy}.
 
-\pagebreak
 
 \section{Princípy statickej analýzy} \label{principy}
 \subsection{Čo je statická analýza} \label{principy:co}
@@ -131,10 +129,10 @@ horšom prípade, celkové vynechanie statickej analýzy.
 
 V masívnejších projektoch je počet defektov veľký a ak prezentácia je neprehľadná a nečitateľná, developer sa ľahko
 stratí v kvantách informácií. To znamená, že viac času je minutého na opätovné zorientovanie sa, ako na samotné
-opravenie chýb a toto, ako v predošlom odesku, môže viesť ku vynechaniu statickej analýzy kompletne.
+opravenie chýb a toto, ako v predošlom odseku, môže viesť k vynechaniu statickej analýzy kompletne.
 
 \subsubsection*{Tímová práca}
-Vývoj softvéeru je prevažne tímová práca, preto je dôležité, aby inžinieri nástrojov statickej anaýzy brali tento
+Vývoj softvéru je prevažne tímová práca, preto je dôležité, aby inžinieri nástrojov statickej anaýzy brali tento
 dôležitý fakt do úvahy pri ich vytváraní. Jeden vývojar uviedol, že síce sú tieto nástroje užitočné, ale neexistuje
 jednoduchý spôsob ako zdielať nastavenia v tíme. Z tohto úkonu sa takto stáva nepraktický manuálny proces nastavovania,
 ktorý v prípade zmeny štandardov a nastavení zapríčiní zmätok a chaos.
@@ -150,9 +148,9 @@ nástroj. Ale ako uviedlo 17 z 20 developerov, táto vlastnosť je silne netrivi
 
 Vývojar potrebuje niekoľko hodín, len na to aby sa naučil ako nastaviť daný nástroj. \emph{„Mnohe nástroje sú tak ťažko nastaviteľné, že vám v tom rovno zabránia."}
 
-Problém, ktorý mala väčšina respondentov, je nemožnosť vypnúť upozornenia na špecifický typ defektov. Niektoré nástroje
-poskytuju vypnutie natrvalo, ale toto sa zas nepáči developerom, lebo nikto nevie vopred povedať, či daná, teraz
-ignorovateľná chyba, bude taká aj v budúcnosti.
+Problém, ktorý mala väčšina respondentov, je nemožnosť dočasne vypnúť upozornenia na špecifický typ defektov. Niektoré
+nástroje poskytuju vypnutie natrvalo, ale toto sa zas nepáči developerom, lebo nikto nevie vopred povedať, či daná,
+teraz ignorovateľná chyba, bude taká aj v budúcnosti.
 
 \subsubsection*{Nejasnosť}
 Väčšina developerov nedostatočne využíva túto metódu pre nejasnosť vo výstupe. Neschopnosť porozumieť nájdeným chybám
@@ -160,11 +158,11 @@ je pre 19 z 20 vývojarov bariera. Nezrozumiteľné a nevyužiteľné vysvetleni
 faktory vzniku nejasností.
 
 Najčastejšie spomínaný problém je nedostačujúca alebo neefektívna implementácia rýchlych návrhov opráv. Väčšina z
-respondentov by prijali návrhy počas opravovania nájdených chýb. \emph{„Ak mi dokážeš povedať o chybe, tak by si mi mal
+respondentov by prijala návrhy počas opravovania nájdených chýb. \emph{„Ak mi dokážeš povedať o chybe, tak by si mi mal
 	vedieť aj povedať ako ju opraviť."}, vyhlásil jeden z respondentov.
 
 \section{Implementácia nástrojov statickej analýzy} \label{implementacia}
-Existuje viacero typov nástrojov statickej analýzy. Nástroje implementované v integorovaných vývojových prostrediach (IDE),
+Existuje viacero typov nástrojov statickej analýzy. Nástroje implementované v integrovaných vývojových prostrediach (IDE),
 ktoré bežia v pozadí, poskytujú instantú spätnú väzbu počas práce, avšak tento typ nachádza len jednoduché chyby nie
 komputačne náročné na odhalenie.
 
@@ -179,7 +177,7 @@ Samozrejme dôležitá je prax, to ako uživateľ používa a vníma daný nást
 
 \subsection*{Kedy sú používané}
 Developeri využívajú tieto nástroje behom voľna, v časoch medzi stretnutiami, alebo keď majú časové okno. Na oprave
-nájdených chýb strávia v priemere 10 až 30 minút a oprave jedneho nálezu zaberie zhruba menej ako 1 deň.
+nájdených chýb strávia v priemere 10 až 30 minút a oprava jedného nálezu zaberie zhruba menej ako 1 deň.
 
 \subsection*{Ciele pri používaní}
 Zvyčajne je vývojarovým cieľom opraviť všetky defekty alebo ich opraviť čo najviac v stanovenom časovom úseku. Preto
@@ -194,7 +192,7 @@ nedokáže chybu opraviť.
 \section{Návrhy na zlepšenie} \label{navrhy}
 Najvyužívanejšie funkcionality sa týkajú opravy chýb. Návrhy rýchlych opráv by mali ukázať porovnanie terajšieho kódu a
 kódu po aplikovaní návrhu. Taktiež by sa developerom páčila možnosť aplikovania opravy rovno z nástroja. Táto aplikácia
-by mala mať viacero možnosťí, aplikovanie celého návrhu, iba časti, alebo vôbec.
+by mala mať viacero možností, aplikovanie celého návrhu, iba časti, alebo vôbec.
 
 Samotné zobrazenie chýb má tiež zopár aspektov na vylepšenie. Malo by byť čo najrýchlejšie, aby nenarušovalo pracovný
 priebeh, čiže najlepšie vyhodnocované v pozadí s okamžitou spätnou väzbou. A malo by aj uľahčiť kolaboráciu a
