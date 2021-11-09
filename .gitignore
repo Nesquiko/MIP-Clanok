@@ -9,3 +9,5 @@
 *.vsdx
 *.toc
 odlozene.txt
+*.snm
+*.nav
