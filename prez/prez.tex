@@ -1,18 +1,7 @@
-% Valentino Vranic
-% Metody inzinierskej prace 2012/13
-
 \documentclass{beamer}
 
-%\usetheme{Warsaw}
-%\usetheme{Antibes}
-%\usetheme{JuanLesPins}
-\usetheme{Goettingen}
-
-%\usecolortheme{seahorse}
-%\usecolortheme{dolphin}
-%\usecolortheme{rose}
-% http://deic.uab.es/~iblanes/beamer_gallery/index_by_color.html
-\usecolortheme{beaver}
+\usetheme{JuanLesPins}
+\usecolortheme{seahorse}
 
 %\useoutertheme[]{sidebar}
 
@@ -22,14 +11,22 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{url}
-
-\usepackage{listings}
-
-% formatovanie kodu
-\lstset{language=C++,basicstyle=\fontsize{8}{9.6}\selectfont,showstringspaces=false,columns=fullflexible,identifierstyle=\ttfamily,keywordstyle=\bfseries,showstringspaces=false,columns=fullflexible}
-%\lstset{language=C,basicstyle=\fontsize{10.5}{12.6}\selectfont,identifierstyle=\ttfamily,keywordstyle=\bfseries,showstringspaces=false,columns=fixed}
+\usepackage{listings, lstautogobble}
 
 \def\BibTeX{\textsc{Bib}\kern-.08em\TeX} 
+
+\definecolor{RoyalBlue}{cmyk}{1, 0.50, 0, 0}
+\lstset{language=Java,
+    keywordstyle=\color{RoyalBlue},
+    basicstyle=\scriptsize\ttfamily,
+    commentstyle=\ttfamily\itshape\color{gray},
+    stringstyle=\ttfamily,
+    showstringspaces=false,
+    breaklines=true,
+    frameround=ffff,
+    rulecolor=\color{black},
+    autogobble=true,
+}
 
 \newcommand{\footcite}[1]{\footnote{\tiny #1}}
 \newcommand{\umlet}{.5}
@@ -39,42 +36,9 @@
 \newcommand{\stl}{\guillemotleft}
 \newcommand{\str}{\guillemotright}
 
-\newcommand{\lsti}{\lstinline[basicstyle=\fontsize{10.5}{12.1}\selectfont]}
-
-\newcommand{\ssection}[1]{
-	\section{#1}
-	\begin{frame}[fragile=singleslide]\frametitle{}
-	\Huge #1
-	\end{frame}
-}
-
-\newcommand{\ssectionn}[1]{
-	\section*{#1}
-	\begin{frame}[fragile=singleslide]\frametitle{}
-	\Huge #1
-	\end{frame}
-}
-
-\newenvironment{program}{\begin{beamercolorbox}[rounded=true,shadow=true]{block body}\vspace{-4mm}}{\vspace{-2mm}\end{beamercolorbox}}
-
-\setbeamercolor{fvystup}{fg=white,bg=black}
-\newenvironment{vystup}{\begin{beamercolorbox}[rounded=true,shadow=true]{fvystup}}{\end{beamercolorbox}}
-
-\newenvironment{poznamka}{\begin{beamercolorbox}[rounded=true,shadow=false]{block body}}{\end{beamercolorbox}}
-
 \setbeamertemplate{footline}[page number]
-{
-%\insertpagenumber
-%\begin{beamercolorbox}{section in head/foot}
-%\vskip2pt\insertnavigation{\paperwidth}\vskip2pt
-%\end{beamercolorbox}%
-}
 
-
-
-\author{Lukas Castven}
-%\url{www.fiit.stuba.sk/~vranic}, \url{vranic@fiit.stuba.sk}}
-%{\tiny \url{www.fiit.stuba.sk/~vranic}, \url{vranic@fiit.stuba.sk}}
+\author{Lukáš Častven}
 \institute{
 	Fakulta informatiky a informačných technológií\\
 	Slovenská technická univerzita v Bratislave}
@@ -83,38 +47,44 @@
 
 \title{Využitie statickej analýzy kódu pri vývoji softvéru}
 
-\date{\footnotesize 9. november 2021}
-
+\date{\footnotesize 28. november 2021}
 
 
 \begin{document}
 
+% titulny slajd
 \begin{frame}[fragile=singleslide]
 	\titlepage
 \end{frame}
 
-
-\begin{frame}[fragile=singleslide]\frametitle{O čom to je}
-	Ešte pre prehľadom prezentácie sa zvyčajne uvádza motivácia.
-
-	Bežne sa aj tu používajú odrážky, ale tento text je naschvál uvedený bez odrážok. Niekedy môže byť potrebné uviesť aj citáty\ldots{}
-
-	Toto je len príklad slajdov. Ako urobiť dobrú prezentáciu bolo vysvetlené na prednáške.
+% slajd s motivaciou vyberu tejto temy
+\begin{frame}[fragile=singleslide]\frametitle{Motivácia}
+	\begin{itemize}
+		\item Spôsob udržania kvality kódu
+		\item Zautomatizované hľadanie chýb a defektov
+		\item \emph{,,Hoci čo, čo zautomatizuje nudnú prácu je skvele.''}~\footcite{B. Johnson, Why don't software developers use
+			      staticanalysis tools to find bugs?,” IEEE, may 2013. }
+	\end{itemize}
 \end{frame}
 
-
+% slajd s prehladom o sekciach
 \begin{frame}[fragile=singleslide]\frametitle{Prehľad}
 	\tableofcontents
 \end{frame}
 
 
 \section{Principy statickej analýzy}
-% príkaz \ssection by vytvoril zvláštný slajd s názvom časti - v krátkych prezentáciách to prekáža, lebo oberá o čas
 
 \begin{frame}[fragile=singleslide]\frametitle{Principy statickej analýzy}
 	\begin{itemize}
-		\item Co to je
-		\item Co robi
+		\item Analyzovanie kódu bez spušťanie
+		\item Informovanie o chybách a defektoch
+		\item Príklad chybného kódu~\footcite{N. Ayewah, Using static analysis to find bugs}
+		      \begin{lstlisting}
+				public String founType() {
+					return this.foundType();
+				}
+				\end{lstlisting}
 	\end{itemize}
 \end{frame}
 
@@ -122,21 +92,35 @@
 
 \section{Využitie pri vyvoji softveru}
 
-\begin{frame}[fragile=singleslide]\frametitle{Ďalší slajd}
+\begin{frame}[fragile=singleslide]\frametitle{Využitie pri vyvoji softveru}
+
+	\begin{table}
+		\begin{center}
+			\begin{tabular}{l|l}
+				$Benefity$                & $Nedostatky$                       \\
+				\hline
+				Automatické hľadanie chýb & Falošné pozitíva                   \\
+				Urdžanie kvality kódu     & Prerušenie pracovného priebehu     \\
+				Predintegrácia            & Nejasnosť                          \\
+				Urdžanie tímových praktík & Nedostatočná podpora tímovej práce \\
+				Nastaviteľnosť            & Netriviálnosť                      \\
+			\end{tabular}
+		\end{center}
+	\end{table}
+
+\end{frame}
+
+\section{Implementácia nástrojov statickej analýzy}
+
+\begin{frame}[fragile=singleslide]\frametitle{Implementácia nástrojov statickej analýzy}
 	\begin{itemize}
-		\item Preco ano
-		      \begin{itemize}
-			      \item Automatické hladanie chyb
-			      \item Komunikácia
-		      \end{itemize}
-		\item Nedostatky
-		      \begin{itemize}
-			      \item Vysledok analyzy
-			      \item Nejasnost
-		      \end{itemize}
+		\item Integrované v IDE
+		\item Integrované v kompilátoroch
+		\item Rigorózne analyzátory
 	\end{itemize}
 \end{frame}
 
+\section{Využitie v praxi}
 
 \begin{frame}[fragile=singleslide]\frametitle{Slajd len s obrázkom}
 	\includegraphics[scale=.30]{../clanok/pozitiva_negativa}
@@ -167,15 +151,11 @@ int main() {
 
 
 \begin{frame}[fragile=singleslide]\frametitle{Rámiky}
-	\begin{poznamka}
-		Text možno uviesť v rámiku
-	\end{poznamka}
 
 	\begin{itemize}
 		\item Program
 
-		      \begin{program}
-			      \begin{lstlisting}
+		      \begin{lstlisting}
 void main() {
    printf("%d", na_druhu(118));
 }
@@ -184,14 +164,11 @@ void na_druhu(int i) {
    return i * i;
 }
 \end{lstlisting}
-		      \end{program}
 
 		\item Výstup
-		      \begin{vystup}
-			      \begin{lstlisting}
+		      \begin{lstlisting}
 13924
 \end{lstlisting}
-		      \end{vystup}
 
 	\end{itemize}
 \end{frame}
@@ -210,8 +187,6 @@ void na_druhu(int i) {
 
 
 \end{document}
-
-
 
 
 Text \end{document} za príkazom \end{document} LaTeX ignoruje, takže tu môžete odkladať veci (aj celé slajdy), ktoré nechcete vymazať, lebo ich ešte možno budete potrebovať, avšak ich v danom momente nechcete mať v slajdoch.
