@@ -115,64 +115,17 @@
 \begin{frame}[fragile=singleslide]\frametitle{Implementácia nástrojov statickej analýzy}
 	\begin{itemize}
 		\item Integrované v IDE
-		\item Integrované v kompilátoroch
+		\item Integrované v kompilátoroch~\footcite{\url{https://developers.redhat.com/blog/2020/03/26/static-analysis-in-gcc-10\#diagnostic_paths}}
+		      \includegraphics[scale=0.35]{SAkompiler.png}
 		\item Rigorózne analyzátory
 	\end{itemize}
 \end{frame}
 
 \section{Využitie v praxi}
 
-\begin{frame}[fragile=singleslide]\frametitle{Slajd len s obrázkom}
-	\includegraphics[scale=.30]{../clanok/pozitiva_negativa}
-	% pridajte vlastný obrázok a zrušte znák % pred príkazom \includegraphics vo formáte PDF prípadne PNG alebo JPG
-	% scale určuje veľkosť obrázku
-
-	{\tiny Nejaká poznámka k obrázku, možno zdroj\ldots}
+\begin{frame}[fragile=singleslide]\frametitle{Využitie v praxi}
+	\centerline{\includegraphics[scale=0.38]{vyuzitie.pdf}}
 \end{frame}
-
-
-\begin{frame}[fragile=singleslide]\frametitle{Zvýraznenie syntaxe}
-	\begin{itemize}
-		\item Na zvýraznenie syntaxe stačí použiť balík listings so správne nastaveným programovacím jazykom
-		      \begin{lstlisting}
-int na_druhu(int i) {
-   return i * i;
-}
-
-int main() {
-   printf("%d", na_druhu(118));
-   return 0;
-}
-\end{lstlisting}
-
-		\item Jazyk C++ je ešte zaujímavejší: je multiparadigmový\footcite{\url{J. O. Coplien. Multi-Paradigm Design for C++. Addison-Wesley, 1998.}}
-	\end{itemize}
-\end{frame}
-
-
-\begin{frame}[fragile=singleslide]\frametitle{Rámiky}
-
-	\begin{itemize}
-		\item Program
-
-		      \begin{lstlisting}
-void main() {
-   printf("%d", na_druhu(118));
-}
-
-void na_druhu(int i) {
-   return i * i;
-}
-\end{lstlisting}
-
-		\item Výstup
-		      \begin{lstlisting}
-13924
-\end{lstlisting}
-
-	\end{itemize}
-\end{frame}
-
 
 
 \section*{Zhodnotenie a ďalšia práca}

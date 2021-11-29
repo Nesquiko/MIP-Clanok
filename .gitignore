@@ -6,7 +6,6 @@
 *.log
 *.out
 *.synctex.gz
-*.vsdx
 *.toc
 odlozene.txt
 *.snm
