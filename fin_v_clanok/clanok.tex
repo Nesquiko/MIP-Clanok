@@ -59,13 +59,13 @@ by chceli vývojari vidieť v budúconsti, časť \ref{navrhy}.
 
 
 \section{Princípy statickej analýzy} \label{principy}
-\subsection{Čo je statická analýza} \label{principy:co}
+\subsection{Definícia statickej analýzy} \label{principy:co}
 Statická analýza je proces, pri ktorom je kód posudzovaný bez spustenia samotného programu a bez vstupu. Preto sa
 nazýva statická. Analyzuje sa zdrojový a v niektorých prípadoch aj objektový kód\footnote{Väčšinou ide o súbory s
 	rozšírením nazvu „.o".}. Po úspešnom ohodnotení kódu, sú developerovi zobrazené nájdené chyby a defekty. Taktiež sú
 poskytnuté vysvetlenia, prečo sú najdené chyby reálnymi chybami a ako ich je možné opraviť.\cite{wiki:Static_program_analysis}
 
-\subsection{Čo statická analýza robí} \label{principy:ako}
+\subsection{Funkcia statickej analýzy} \label{principy:ako}
 Existuje veľa typov nástrojov statickej analýzy, ale nie všetky poskytujú rovnaké funkcionality ako iné. Našťastie
 hlavný postup je jasne definovaný. Skladá sa len z dvoch krokov:
 
@@ -92,7 +92,7 @@ a zistíme prečo je predošlé tvrdenie pravdivé.
 V tomto príspevku autori uskutočnili rozhovory s dvadsiatimi vývojarmi na tému statická analýza. Zozbierané odpovede
 zkategorizovali do niekoľkých okruhov a rozdelili na pozitívne a negatívne.
 
-\subsection{Prečo áno} \label{vyuzitie:benefity}
+\subsection{Benefity} \label{vyuzitie:benefity}
 \subsubsection*{Automatické hľadanie chýb}
 5 z 20 účastníkov tejto práce si myslí, že nástroje statickej analýzy sa oplatí používať práve z tohto dôvodu.
 Manuálna kontrola je zdĺhavá a namáhavá, oproti automatickej statickej analýze.
@@ -172,7 +172,7 @@ kompilátora daného programovacieho jazyka.
 A v neposlednom rade poznáme aj rigorózne analyzátory, ktoré sa väčšinou
 spúšťajú cez noc, lebo dlho a podrobne analyzujú daný kód.\cite{BrittanyJohnson, LisaNguyen}
 
-\section{Z pohľadu developera} \label{dev}
+\section{Využitie v praxi} \label{dev}
 Samozrejme dôležitá je prax, to ako uživateľ používa a vníma daný nástroj\cite{LisaNguyen}.
 
 \subsection*{Kedy sú používané}
