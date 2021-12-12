@@ -6,7 +6,16 @@
 *.log
 *.out
 *.synctex.gz
+<<<<<<< HEAD
 *.snm
 *.nav
 *.toc
 odlozene.txt
+=======
+*.toc
+odlozene.txt
+*.snm
+*.nav
+*.xml
+*.bcf
+>>>>>>> edit

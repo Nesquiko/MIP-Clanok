@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 % Valentino Vranic
 % Metody inzinierskej prace 2012/13
 
@@ -15,6 +16,12 @@
 %\usecolortheme{beaver}
 
 %\useoutertheme[]{sidebar}
+=======
+\documentclass{beamer}
+
+%\usetheme{JuanLesPins}
+\usecolortheme{seahorse}
+>>>>>>> edit
 
 \setbeamercovered{transparent}
 
@@ -22,6 +29,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{url}
+<<<<<<< HEAD
 
 \usepackage{listings}
 
@@ -87,10 +95,44 @@
 \date{\footnotesize 5. november 2020}
 
 
+=======
+\usepackage{listings, lstautogobble}
+
+
+\definecolor{RoyalBlue}{cmyk}{1, 0.50, 0, 0}
+\lstset{language=Java,
+    keywordstyle=\color{RoyalBlue},
+    basicstyle=\scriptsize\ttfamily,
+    commentstyle=\ttfamily\itshape\color{gray},
+    stringstyle=\ttfamily,
+    showstringspaces=false,
+    breaklines=true,
+    frameround=ffff,
+    rulecolor=\color{black},
+    autogobble=true,
+}
+
+\beamertemplatenavigationsymbolsempty
+\newcommand{\footcite}[1]{\footnote{\tiny #1}}
+
+\setbeamertemplate{footline}[page number]
+
+\author{Lukáš Častven}
+\institute{
+	Fakulta informatiky a informačných technológií\\
+	Slovenská technická univerzita v Bratislave}
+
+\subtitle{\vspace{3mm} Metódy inžinierskej práce 2020/2021}
+
+\title{Využitie statickej analýzy kódu pri vývoji softvéru}
+
+\date{\footnotesize 28. november 2021}
+>>>>>>> edit
 
 
 \begin{document}
 
+<<<<<<< HEAD
 \begin{frame}[fragile=singleslide]
 \titlepage
 \end{frame}
@@ -123,10 +165,47 @@ Toto je len príklad slajdov. Ako urobiť dobrú prezentáciu bolo vysvetlené n
 	\end{itemize}
 \item Pokračuje prvá úroveň
 \end{itemize}
+=======
+% titulny slajd
+\begin{frame}[fragile=singleslide]
+	\titlepage
+\end{frame}
+
+% slajd s motivaciou vyberu tejto temy
+\begin{frame}[fragile=singleslide]\frametitle{Motivácia}
+	\begin{itemize}
+		\item Spôsob udržania kvality kódu
+		\item Zautomatizované hľadanie chýb a defektov
+		\item \emph{,,Hoci čo, čo zautomatizuje nudnú prácu je skvelé.''}~\footcite{B. Johnson, Why don't software developers use
+			      staticanalysis tools to find bugs?,” IEEE, may 2013. }
+	\end{itemize}
+\end{frame}
+
+% slajd s prehladom o sekciach
+\begin{frame}[fragile=singleslide]\frametitle{Prehľad}
+	\tableofcontents
+\end{frame}
+
+
+\section{Princípy statickej analýzy}
+
+\begin{frame}[fragile=singleslide]\frametitle{Principy statickej analýzy}
+	\begin{itemize}
+		\item Analyzovanie kódu bez spúšťania
+		\item Informovanie o chybách a defektoch
+		\item Príklad chybného kódu~\footcite{N. Ayewah, Using static analysis to find bugs}
+		      \begin{lstlisting}
+				public String founType() {
+					return this.foundType();
+				}
+				\end{lstlisting}
+	\end{itemize}
+>>>>>>> edit
 \end{frame}
 
 
 
+<<<<<<< HEAD
 \section{Ďalšia časť}
 
 \begin{frame}[fragile=singleslide]\frametitle{Ďalší slajd}
@@ -218,3 +297,60 @@ void na_druhu(int i) {
 
 
 Text \end{document} za príkazom \end{document} LaTeX ignoruje, takže tu môžete odkladať veci (aj celé slajdy), ktoré nechcete vymazať, lebo ich ešte možno budete potrebovať, avšak ich v danom momente nechcete mať v slajdoch.
+=======
+\section{Využitie pri vývoji softvéru}
+
+\begin{frame}[fragile=singleslide]\frametitle{Využitie pri vyvoji softveru}
+
+	\begin{table}
+		\begin{center}
+			\begin{tabular}{l|l}
+				$Benefity$                & $Nedostatky$                       \\
+				\hline
+				Automatické hľadanie chýb & Falošné pozitíva                   \\
+				Urdžanie kvality kódu     & Prerušenie pracovného priebehu     \\
+				Predintegrácia            & Nejasnosť                          \\
+				Urdžanie tímových praktík & Nedostatočná podpora tímovej práce \\
+				Nastaviteľnosť            & Netriviálnosť                      \\
+			\end{tabular}
+		\end{center}
+	\end{table}
+
+\end{frame}
+
+\section{Implementácia nástrojov statickej analýzy}
+
+\begin{frame}[fragile=singleslide]\frametitle{Implementácia nástrojov statickej analýzy}
+	\begin{itemize}
+		\item Integrované v IDE
+		\item Integrované v kompilátoroch~\footcite{\url{https://developers.redhat.com/blog/2020/03/26/static-analysis-in-gcc-10\#diagnostic_paths}}
+		      \includegraphics[scale=0.35]{SAkompiler.png}
+		\item Rigorózne analyzátory
+	\end{itemize}
+\end{frame}
+
+\section{Využitie v praxi}
+
+\begin{frame}[fragile=singleslide]\frametitle{Využitie v praxi}
+	\centerline{\includegraphics[scale=0.38]{vyuzitie.pdf}}
+\end{frame}
+
+
+\section*{Záver}
+
+\begin{frame}[fragile=singleslide]\frametitle{Záver}
+	\begin{itemize}
+		\item Statická analýza má skvelé benefity
+		\item Implementácie majú aj nedostatky
+		\item Celkovo sa ale nástroje zlepšujú, vďaka spätnej väzbe od užívateľov
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\begin{center}
+		\Huge{Ďakujem za pozornosť!}
+	\end{center}
+\end{frame}
+
+\end{document}
+>>>>>>> edit
